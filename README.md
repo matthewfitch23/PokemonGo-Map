@@ -11,6 +11,9 @@ To make the service accessible over the intenet, get <a href="https://ngrok.com/
 
 You can then access the map from other devices using the ngrok URL.
 
+There is a location URL allowing you to select a location remotely, example:
+http://asdf1234.ngrok.io/location?l=belfast%20city%20hall
+
 A useful command after killing:
 kill $(lsof -i :5000 | grep python | cut -d " " -f 2)
 
