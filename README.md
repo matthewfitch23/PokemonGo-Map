@@ -1,3 +1,19 @@
+#Regular instructions below
+My addition allows you to specify a location through a URL, and auto reloads the server every 60 seconds.
+
+Run the program as:
+./run.sh username password
+
+You can set an initial start location in location.txt.
+
+To make the service accessible over the intenet, get <a href="https://ngrok.com/">ngrok</a>, and after running run.sh, do:
+./ngrok http 5000
+
+You can then access the map from other devices using the ngrok URL.
+
+A useful command after killing:
+kill $(lsof -i :5000 | grep python | cut -d " " -f 2)
+
 #Not accepting pull requests to Master branch at the moment.#
 #Please submit all pull requests to [Develop Branch](https://github.com/AHAAAAAAA/PokemonGo-Map/tree/develop) #
 

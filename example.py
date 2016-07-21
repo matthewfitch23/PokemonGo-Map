@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import flask
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_googlemaps import GoogleMaps
 from flask_googlemaps import Map
 from flask_googlemaps import icons
@@ -759,6 +759,17 @@ def create_app():
 
 
 app = create_app()
+
+@app.route('/location')
+def new_location():
+    """ Sets the location to be searched """
+    new_location = request.args.get('l')
+
+    f = open('location.txt', 'w')
+    f.write(new_location)
+    f.close()
+
+    return 'OK'
 
 
 @app.route('/data')
